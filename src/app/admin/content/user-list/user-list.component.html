@@ -1,0 +1,48 @@
+<div class="row">
+    <app-header></app-header>
+</div>
+<div class="row " style="background-color: #98ff98;">
+    <div class="col-md-2 bg-success">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-md-10">
+        <div class="col">
+            <div class="col-md-12 p-2" style="background-color: #fffdd0;"s>
+                <div class="row"    >
+                    <form>
+                        <div class="mb-3 row">
+                            <label for="table-filtering-search" class="col-xs-3 col-sm-auto col-form-label">Kullanıcı Adı:</label>
+                            <div class="col">
+                                <input id="table-filtering-search" class="form-control" type="text" placeholder="Kullanıcı Adını Buraya Giriniz !!!"/>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-footer">
+                                    <div class="body">
+                                        <ul *ngFor="let users of user">
+                                            <label>Adı : </label>
+                                            <input value="{{users.name}}"> <hr>
+                                            <label>Soyadı :</label>
+                                            <input value="{{users.surname}}"> <hr>
+                                            <label>Kullanıcı Adı :</label>
+                                            <input value="{{users.username}}"><hr>
+                                            <label>Kullanıcı Mail:</label>
+                                            <input value="{{users.mail}}">
+                                            <button type="submit" class="btn btn-success" (click)="delete()">Sil</button>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                      
+                     </div>
+                     
+                </div>
+            </div>
+            
+        </div>  
+    </div>
+</div>

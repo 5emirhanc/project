@@ -1,0 +1,55 @@
+<div class="row">
+    <div class=" bg-white">
+        <div class="d-flex flex-column p-3 text-white bg-dark">
+
+            <a>
+                <a routerLink="/products">
+                    <h3>Ürün Kategorisi</h3>
+                </a>
+                <section class="example-section">
+                    <a *ngFor="let category of categories" (click)="setCurrentCategory(category)">
+                        <mat-radio-button routerLink="/products/{{ category.id}}"
+                            class="example-margin ">{{category.categoryName}}</mat-radio-button></a>
+
+                </section>
+            </a>
+
+        </div>
+    </div>
+    <div class="col">
+        <div class="col-md-12 ">
+            <div class="page">
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div *ngFor="let product of getActiveProducts()" class="col-md-4">
+                                <div *ngIf="dataLoaded==true" class="d-flex justify-content-center ">
+                                    <div class="card">
+                                        <div class="product-img">
+                                            <img [src]="createImgPath(product.file)" class="card-img-top" alt="">
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <div class="title">
+                                                <h3>{{product.productName}}</h3>
+
+                                            </div>
+
+                                            <div class="product-options">
+                                                <div class="sizes">
+                                                    <strong>Ürün Açıklaması</strong>
+                                                    <strong>{{product.price}} TL</strong>
+                                                    <span>{{product.description}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+<div class="row">
+    <app-header></app-header>
+</div>
+<div class="row" style="background-color: #98ff98;">
+    <div class="col-md-2 bg-success">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-md-10 mt-5 mb-5 ">
+        <div class="col-md-6 ">
+            <div class="">
+                <div class="card card-body" style="background-color: #fffdd0;">
+                    
+                        <div class="mbottom">
+                            <h2>Ürün Ekle </h2>
+                            <div class="card border-success rounded-0"></div>
+                            <br>
+                        </div>
+                        <form [formGroup]="productAddForm">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        <input type="text" formControlName="code" class="form-control input-lg"
+                                            placeholder="Ürün Kodu*">
+                                    </div>
+                                </div><br>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="text" formControlName="productName" class="form-control input-lg"
+                                            placeholder="Ürün İsmi *">
+                                    </div>
+                                </div><br>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="text" formControlName="price" class="form-control input-lg"
+                                            placeholder="Ürün Fiyatı *">
+                                    </div>
+                                </div><br>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <textarea type="text" formControlName="description"
+                                            class="form-control input-lg" rows="3" placeholder="Ürün Açıklama *"></textarea>
+                                    </div>
+                                </div><br>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <select class="custom-select" style="width: 50%;" (change)="changeCategory($event)" formControlName="categoryId">
+                                            <option value="" disabled>Kategori Seç</option>
+                                            <option *ngFor="let categories of category"  value={{categories.id}} >{{categories.categoryName}}</option>
+                                         </select>
+                                    </div>
+                                </div><br>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <app-upload (onUploadFinished)="uploadFinished($event)"></app-upload>
+    
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div><br>
+                 
+                              
+                            </div>
+                    
+                        
+                            <button class="btn btn-success" (click)="add()">Ekle</button>
+                        </form>
+                   
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>

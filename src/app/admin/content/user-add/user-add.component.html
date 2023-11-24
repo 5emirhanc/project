@@ -1,0 +1,54 @@
+<div class="row">
+    <app-header></app-header>
+</div>
+<div class="row" style="background-color: #98ff98;">
+    <div class="col-md-2">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-md-10 mt-5">
+        <div class="col-md-6">
+           
+            <div >
+                <div class="card card-body mb-5 p-5" style="background-color: #fffdd0;">
+
+                    <div class="mbottom">
+                        <h2>Kullanıcı Ekle </h2>
+                        <div class="card border-success rounded-0"></div>
+                        <br>
+                    </div>
+                    <form [formGroup]="UserAdd">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" id="username" formControlName="username"
+                                        class="form-control input-lg" placeholder="Kullanıcı adı *" required="" value=""><br>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="password" id="password" formControlName="password"
+                                    class="form-control input-lg" placeholder="Şifre *" required="" value=""><br>
+                            
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" id="name" formControlName="name"
+                                        class="form-control input-lg" placeholder="Adı  *" required="" value=""><br>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" id="surname" formControlName="surname"
+                                        class="form-control input-lg" placeholder="Soyadı  *" required="" value=""><br>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="email" id="mail" formControlName="mail"
+                                    class="form-control input-lg" placeholder="Email *" required="" value=""><br>
+                            
+                                </div>
+                            </div><br>
+
+                        </div>
+                        <button type="submit" class="btn   btn-success" (click)="add()">Ekle</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

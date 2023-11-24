@@ -1,0 +1,45 @@
+<div class="row">
+    <app-header></app-header>
+</div>
+<div class="row" style="background-color: #98ff98;">
+    <div class="col-md-2 bg-success">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-md-10">
+        <div class="col">
+            <div class="col-md-12 p-2" style="background-color: #fffdd0;">
+                <div class="row">
+                    <form>
+                        <div class="mb-3 row">
+                            <label for="table-filtering-search" class="col-xs-3 col-sm-auto col-form-label">Ürün Adı:</label>
+                            <div class="col-md-3">
+                                <input id="table-filtering-search" class="form-control" type="text" placeholder="Ürün Adını Buraya Giriniz !!!"/>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <div *ngFor="let product of products" class="col-md-4">
+                            <div class="card">
+                                <div class="card-footer">
+                                    <div class="body">
+                                        <img class="product-img card-img-top" [src]="createImgPath(product.file)"><hr>
+                                        <label>Ürün Id : </label>
+                                        <input value="{{product.id}}"><hr>
+                                        <label>Ürün Adı :</label>
+                                        <input value="{{product.productName}}"><hr>
+                                        <label>Ürün Fiyatı :</label>
+                                        <input value="{{product.price}}"><hr>
+                                        <button type="submit" class="btn btn-success" (click)="delete()">Sil</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                      
+                     </div>
+                     
+                </div>
+            </div>
+            
+        </div>  
+    </div>
+</div>
